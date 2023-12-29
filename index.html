@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Generator</title>
+    <style>
+        video {
+            max-width: 100%;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to the Video Generator</h1>
@@ -12,10 +17,24 @@
     <br>
     <button onclick="generateVideo()">Generate Video</button>
 
+    <h2>Generated Video:</h2>
+    <video id="generatedVideo" controls></video>
+    <a id="downloadLink" style="display: none;" download>Download Video</a>
+
     <script>
         function generateVideo() {
             var description = document.getElementById("description").value;
-            // Add your video generation logic here
+            // Simulate video generation - replace with actual logic
+            var videoBlob = new Blob(["Generated video content for: " + description], { type: "video/mp4" });
+
+            var videoUrl = URL.createObjectURL(videoBlob);
+            document.getElementById("generatedVideo").src = videoUrl;
+
+            // Enable download link
+            var downloadLink = document.getElementById("downloadLink");
+            downloadLink.href = videoUrl;
+            downloadLink.style.display = "block";
+
             alert("Video generated with description: " + description);
         }
     </script>
