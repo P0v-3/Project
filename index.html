@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Generator</title>
+</head>
+<body>
+    <h1>Welcome to the Video Generator</h1>
+    <p>Describe your video:</p>
+    <textarea id="description" rows="4" cols="50"></textarea>
+    <br>
+    <button onclick="generateVideo()">Generate Video</button>
+
+    <script>
+        function generateVideo() {
+            var description = document.getElementById("description").value;
+            // Add your video generation logic here
+            alert("Video generated with description: " + description);
+        }
+    </script>
+</body>
+</html>
